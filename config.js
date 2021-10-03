@@ -16,4 +16,20 @@ httpEndpoint.siteSettings = {
     "addSetting"      : {"action": "new"},
 }
 
+httpEndpoint.userDetails = {
+    "getUsers"     : {"action": "get"},
+    "detailUser"   : {"action": "detail"},
+    "DeleteUser"   : {"action": "delete"},
+    "updateUser"   : {"action": "update"},
+    "addUser"      : {"action": "new"},
+}
+
+httpEndpoint.portfolio = {
+    "getPortfolios"     : {"action": "get"},
+    "detailPortfolio"   : {"action": "detail"},
+    "DeletePortfolio"   : {"action": "delete"},
+    "updatePortfolio"   : {"action": "update"},
+    "addPortfolio"      : {"action": "new"},
+}
+
 exports.httpEndpoint = httpEndpoint;

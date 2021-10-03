@@ -13,11 +13,14 @@
 
     <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,800,900%7cRaleway:300,400,500,600,700" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="<%= logo %>" id="favicon-ico">
 
     <!-- custom styles (optional) -->
     <link href="/assets/css/plugins.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/assets/css/responsive.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -28,7 +31,7 @@
     </div>
 
     <%- include('./layouts/footer') %>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lew-KYcAAAAANAZbb_-8y18NhSLSHdu_sXpwWfN"></script>
     <script src="/assets/my-pages/<%= page %>.js"></script>
-    
   </body>
   </html>

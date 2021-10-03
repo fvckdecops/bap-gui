@@ -931,7 +931,7 @@ button.btn-light:hover:after, a.btn-light:hover:after {
   display: inline-block;
   border: 2px solid #fff;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 10px;
   margin-bottom: 0;
 }
 .blog .blog-item .content .author .part-img img {
@@ -1515,6 +1515,15 @@ button.btn-light:hover:after, a.btn-light:hover:after {
   letter-spacing: 1px;
   line-height: 1;
   text-transform: none;
+}
+
+.img-circle {
+  border-radius: 50%;
+  max-width: 450px
+}
+
+.capitalizeText {
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,6 +2,7 @@ const path      = require('path');
 const BASE_DIR  = path.dirname(require.main.filename);
 const config    = require('../libraries/config');
 const configApi    = require('../config');
+const sgMail = require('@sendgrid/mail');
 require('dotenv').config();
 
 class BaseCtrl {
@@ -47,6 +48,51 @@ class BaseCtrl {
             
             res.end(JSON.stringify(response));
         }
+    }
+
+    static async sendMail(req, res) {
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+        var response = {"status": -1, "message": "Unknown error."};
+
+        if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+            response['message'] = "Please verify the captcha!";
+            res.end(JSON.stringify(response));
+        }
+
+        var secretKey = process.env.RECAPTCHA_SECRET_KEY;
+
+        var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+
+        request(verificationUrl,function(error,response,body) {
+            body = JSON.parse(body);
+            if(body.success !== undefined && !body.success) {
+                response['message'] = "Captcha Verification failed!";
+                res.end(JSON.stringify(response));
+            }
+
+            const msg = {
+                to: 'bagas@adjipratama.web.id', // Change to your recipient
+                from: req.body.fromMail, // Change to your verified sender
+                fromname: req.body.name,
+                subject: req.body.subject,
+                text: req.body.message,
+            }
+    
+            if(!req.body.fromMail.length || !req.body.subject.length || !req.body.message) {
+                response['message'] = "Check your input details and try again.";
+                res.end(JSON.stringify(response));
+            } else {
+                sgMail.send(msg).then(() => {
+                    response['status'] = 0;
+                    response['message'] = "Email sent.";
+                    res.end(JSON.stringify(response));
+                }).catch((error) => {
+                    response['message'] = error;
+                    res.end(JSON.stringify(response));
+                })
+            }
+          });
     }
 }
 

@@ -131,3 +131,34 @@ particlesJS('particles-js',
   }
 
 );
+
+function ajax(url, params, cb) {
+  var requestAjax = $.ajax({
+    "url": url,
+    "method": "POST",
+    "contentType": "application/json",
+    "dataType": "json",
+    "data": JSON.stringify(params),
+    "cache": false,
+
+  });
+
+  requestAjax.done(function(res, textStatus, jqXHR) {
+    cb(res);
+  });
+
+  requestAjax.fail(function(jqXHR, textStatus, errorThrown) {
+    if (jqXHR.status > 0) {
+        if (jqXHR.status == 404) {
+            toastr.warning('Destination AJAX not found');
+        } else {
+            toastr.warning('Request ' + textStatus);
+        }
+    }
+});
+}
+
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}

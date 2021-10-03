@@ -2,6 +2,7 @@ const express    = require('express');
 const session    = require('express-session');
 const path       = require('path');
 const http      = require('http');
+const https      = require('https');
 const fs         = require('fs');
 const bodyParser = require('body-parser');
 const BASE_DIR   = path.dirname(require.main.filename);
@@ -33,8 +34,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/assets", express.static(__dirname + '/assets'));
 app.use('/', appRouter);
 
-var server = http.createServer({}, app);
+var serverHttp = http.createServer({}, app);
 
-server.listen(process.env.APP_PORT, function() {
+var serverHttps = https.createServer({
+    key: fs.readFileSync(path.resolve(BASE_DIR, './') + '/ssl/privkey.pem'),
+    cert: fs.readFileSync(path.resolve(BASE_DIR, './') + '/ssl/cert.pem'),
+}, app);
+
+serverHttp.listen(process.env.APP_PORT, function() {
     console.log(process.env.APP_NAME + " listening at port " + process.env.APP_PORT);
+});
+
+serverHttps.listen(process.env.APP_PORT_SSL, function() {
+    console.log(process.env.APP_NAME + " listening at port " + process.env.APP_PORT_SSL);
 });

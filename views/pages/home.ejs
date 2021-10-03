@@ -1,23 +1,18 @@
 <!-- Header
     ================================================== -->
-    <header id="header" class="header particles-demo cover-bg" data-image-src="/assets/img/main-img.jpg" data-overlay='7' data-scroll-index='0'>
+    <header id="header" class="header particles-demo cover-bg" data-image-src="/assets/img/slider/header.jpg" data-overlay='7' data-scroll-index='0'>
         <!-- particles -->
         <div id="particles-js"></div>
         <div class="container h-100">
           <div class="row align-items-center h-100">
   
             <div class="col-12 caption">
-              <h4>Hello , my name is <span>Jon Deo</span></h4>
+              <h4>Hello , my name is <span><%= title %></span></h4>
               <h2 class="mt-20 mb-20">I'M <span></span></h2>
-              <p class="mt-20">Think of a creative digital agency like dreamy in Paris,<br> turning your dreams into reality.</p>
+              <p class="mt-20">BAP - Play with your code, not your bot.</p>
   
   
-              <div class="scoial-icon mt-20 text-center">
-                <a href="#0"><span><i class="fab fa-facebook-f"></i></span></a>
-                <a href="#0"><span><i class="fab fa-twitter"></i></span></a>
-                <a href="#0"><span><i class="fab fa-linkedin-in"></i></span></a>
-                <a href="#0"><span><i class="fab fa-instagram"></i></span></a>
-                <a href="#0"><span><i class="fab fa-behance"></i></span></a>
+              <div class="scoial-icon mt-20 text-center" id="socMed">
               </div>
             </div>
   
@@ -31,7 +26,7 @@
     ================================================== -->
     <section id="about" class="about section-padding pb-0" data-scroll-index='1'>
         <div class="container">
-          <div class="row align-items-center">
+          <div class="row align-items-center mb-4">
   
             <div class="section-title text-center">
               <p>Who am I</p> <br>
@@ -39,39 +34,16 @@
             </div>
   
             <div class="col-lg-6 sm-mb-30">
-              <div class="part-photo">
-                <img src="/assets/img/hero-about.jpg" alt="">
+              <div class="part-photo" id="profilePicture">
               </div>
             </div>
   
             <div class="col-lg-6">
               <div class="part-text">
                 <h4 class="mb-30">Hello</h4>
-                <p class="pb-35"> I’m <strong> Jon Deo . </strong>  . I am a graphic designer, and I'm very passionate and dedicated to my work. With 7 years experience as a professional graphic designer, I have acquired the skills and knowledge necessary to make your project a success.</p>
+                <p class="pb-35" id="shortMsg"></div>
   
-                <div class="info mt-35">
-                  <ul>
-                    <li>
-                      <span class="title">Name</span>
-                      <span class="value">Jon Deo</span>
-                    </li>
-                    <li>
-                      <span class="title">Address</span>
-                      <span class="value">Egypt</span>
-                    </li>
-                    <li>
-                      <span class="title">Age</span>
-                      <span class="value">29</span>
-                    </li>
-                    <li>
-                      <span class="title">Phone</span>
-                      <span class="value">+0123 123 456 789</span>
-                    </li>
-                  </ul>
-                </div>
-  
-                <a href="#" class="btn mt-10 mr-2"><span>Download CV</span></a>
-                <a href="#" class="btn mt-10 btn-light"><span>Hire Me</span></a>
+                <a href="#" class="btn mt-10 mr-2"><span>Request CV</span></a>
               </div>
             </div>
   
@@ -87,48 +59,13 @@
       <section class="skills section-padding">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 sm-mb-50">
-              <div class="part-text">
-                <h4 class="mb-30">Make beauty Things With Passion.</h4>
-                <p>I designer and developer services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface.</p>
-                <a href="#" class="btn mt-30"><span>Read More</span></a>
-              </div>
-            </div>
-  
-            <div class="col-lg-6">
-              <div class="part-skills">
-                <div class="skills-item mb-30">
-                  <h6>CSS</h6>
-                  <div class="bar">
-                    <span class="fill" data-width="87%"></span>
-                  </div>
-                  <div class="tip"></div>
+            <div class="col-lg-12">
+                <div class="part-text">
+                    <h4 class="mb-30">My Skills:</h4>
                 </div>
-  
-                <div class="skills-item mb-30">
-                  <h6>Javascript</h6>
-                  <div class="bar">
-                    <span class="fill" data-width="75%"></span>
-                  </div>
-                  <div class="tip"></div>
+                <div class="part-skills">
+                    <div class="row" id="skillSet"></div>
                 </div>
-  
-                <div class="skills-item mb-30">
-                  <h6>Photoshop</h6>
-                  <div class="bar">
-                    <span class="fill" data-width="85%"></span>
-                  </div>
-                  <div class="tip"></div>
-                </div>
-  
-                <div class="skills-item">
-                  <h6>Web Design</h6>
-                  <div class="bar">
-                    <span class="fill" data-width="90%"></span>
-                  </div>
-                  <div class="tip"></div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -148,73 +85,49 @@
               <h3>Services<cite> .</cite></h3>
             </div>
   
-            <div class="col-lg-4 col-md-6 mb-30">
+            <div class="col-lg-3 col-md-6 mb-30">
               <div class="services-box box">
                 <div class="icon">
                   <i class="jam jam-brush"></i>
                 </div>
                 <div class="text">
-                  <h4 class="box-title mb-20">Web design</h4>
-                  <p>Extreme attention to detail is the essence of Boo’s unique design concepts.</p>
+                  <h4 class="box-title mb-20">Front End Development</h4>
+                  <p>Create a front end website based on mock up that are given to me.</p>
                 </div>
               </div>
             </div>
   
-            <div class="col-lg-4 col-md-6 mb-30">
+            <div class="col-lg-3 col-md-6 mb-30">
               <div class="services-box box">
                 <div class="icon">
                   <i class="jam jam-cogs"></i>
                 </div>
                 <div class="text">
-                  <h4 class="box-title mb-20">Web development</h4>
-                  <p>Extreme attention to detail is the essence of Boo’s unique design concepts.</p>
+                  <h4 class="box-title mb-20">Back End Development</h4>
+                  <p>Sometimes i do some backend development using NodeJS for Creating / Updating existing API.</p>
                 </div>
               </div>
             </div>
   
-            <div class="col-lg-4 col-md-6 mb-30">
+            <div class="col-lg-3 col-md-6 mb-30">
               <div class="services-box box">
                 <div class="icon">
-                  <i class="jam jam-camera"></i>
+                  <i class="jam jam-database"></i>
                 </div>
                 <div class="text">
-                  <h4 class="box-title mb-20">Photography</h4>
-                  <p>Extreme attention to detail is the essence of Boo’s unique design concepts.</p>
+                  <h4 class="box-title mb-20">Managing Server</h4>
+                  <p>I know how to manage my own server, so that means i can manage your server too.</p>
                 </div>
               </div>
             </div>
   
-            <div class="col-lg-4 col-md-6 xs-mb-30">
+            <div class="col-lg-3 col-md-6 xs-mb-30">
               <div class="services-box box">
                 <div class="icon">
                   <i class="jam jam-phone"></i>
                 </div>
                 <div class="text">
                   <h4 class="box-title mb-20">Responsive Design</h4>
-                  <p>Extreme attention to detail is the essence of Boo’s unique design concepts.</p>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-4 col-md-6 xs-mb-30">
-              <div class="services-box box">
-                <div class="icon">
-                  <i class="jam jam-pie-chart"></i>
-                </div>
-                <div class="text">
-                  <h4 class="box-title mb-20">Seo Friendly</h4>
-                  <p>Extreme attention to detail is the essence of Boo’s unique design concepts.</p>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-4 col-md-6">
-              <div class="services-box box">
-                <div class="icon">
-                  <i class="jam jam-wrench"></i>
-                </div>
-                <div class="text">
-                  <h4 class="box-title mb-20">Support</h4>
                   <p>Extreme attention to detail is the essence of Boo’s unique design concepts.</p>
                 </div>
               </div>
@@ -229,7 +142,7 @@
   
       <!-- Hire me
       ================================================== -->
-      <section  class="hire-me section-padding text-center cover-bg" data-image-src="/assets/img/bg-3.jpg" data-overlay='7'>
+      <section  class="hire-me section-padding text-center cover-bg" data-image-src="/assets/img/hire_me.jpg" data-overlay='7'>
         <div class="container">
   
           <h2>Hire me for your next project</h2>
@@ -253,277 +166,26 @@
               <h3>My Work<cite> .</cite></h3>
             </div>
   
-            <div class="filtering text-center mb-50">
-            <button type="button" data-filter='*' class="active">All</button>
-            <button type="button" data-filter='.brand'>Brand</button>
-            <button type="button" data-filter='.web'>Design</button>
-            <button type="button" data-filter='.photo'>Photo</button>
+            <div class="filtering text-center mb-50" id="filterList">
           </div>
   
           <!-- gallery -->
-          <div class="gallery ohidden no-padding col-12">
-  
-            <div class="col-lg-4 col-md-6 video web mb-30">
-              <div class="item-img">
-                <a class="single-image" href="/assets/img/portfolio/1.jpg"></a>
-                <div class="part-img">
-                  <img src="/assets/img/portfolio/1.jpg" alt="image">
-                  <div class="overlay-img">
-                    <h4>Web</h4>
-                    <h6>Creative Design</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-4 col-md-6 brand mb-30">
-              <div class="item-img">
-                <a class="single-image" href="/assets/img/portfolio/2.jpg"></a>
-                <div class="part-img">
-                  <img src="/assets/img/portfolio/2.jpg" alt="image">
-                  <div class="overlay-img">
-                    <h4>Web</h4>
-                    <h6>Creative Design</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-4 col-md-6 photo web mb-30">
-              <div class="item-img video">
-                <a class="single-image" href="/assets/img/portfolio/3.jpg"></a>
-                <div class="part-img">
-                  <img src="/assets/img/portfolio/3.jpg" alt="image">
-                  <div class="overlay-img">
-                    <h4>Web</h4>
-                    <h6>Creative Design</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-4 col-md-6 brand photo sm-mb-30">
-              <div class="item-img video">
-                <a class="single-image" href="/assets/img/portfolio/4.jpg"></a>
-                <div class="part-img">
-                  <img src="/assets/img/portfolio/4.jpg" alt="image">
-                  <div class="overlay-img">
-                    <h4>Web</h4>
-                    <h6>Creative Design</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-4 col-md-6 video sm-mb-30">
-              <div class="item-img video">
-                <a class="single-image" href="/assets/img/portfolio/5.jpg"></a>
-                <div class="part-img">
-                  <img src="/assets/img/portfolio/5.jpg" alt="image">
-                  <div class="overlay-img">
-                    <h4>Web</h4>
-                    <h6>Creative Design</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-4 col-md-6 photo">
-              <div class="item-img video">
-                <a class="single-image" href="/assets/img/portfolio/6.jpg"></a>
-                <div class="part-img">
-                  <img src="/assets/img/portfolio/6.jpg" alt="image">
-                  <div class="overlay-img">
-                    <h4>Web</h4>
-                    <h6>Creative Design</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  
+          <div class="gallery ohidden no-padding col-12" id="portfolioList">
           </div>
         </div>
       </section>
       <!-- End portfolio
       ================================================== -->
   
-  
-      <!-- testimonial
-      ================================================== -->
-      <section id="testimonial" class="testimonial section-padding cover-bg" data-image-src="/assets/img/bg-2.jpg" data-overlay='7' data-scroll-index='5'>
-        <div class="container">
-          <div class="row">
-  
-            <div class="section-title text-center">
-              <p>What our clients say ?</p><br>
-              <h3>Testimonials<cite> .</cite></h3>
-            </div>
-  
-            <div class="col-md-10 offset-md-1">
-              <div class="owl-carousel owl-theme">
-                <div class="testimonial-item">
-                  <div class="icon">
-                    <i class="fas fa-quote-left"></i>
-                  </div>
-                  <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. </p>
-  
-                  <div class="testimonial-author">
-                    <div class="part-img">
-                      <img src="/assets/img/testimonial/01.jpg" alt="">
-                    </div>
-                    <div class="text">
-                      <h5>Jason Statham</h5>
-                      <h6>Web Desinger</h6>
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="testimonial-item">
-                  <div class="icon">
-                    <i class="fas fa-quote-left"></i>
-                  </div>
-                  <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-  
-                  <div class="testimonial-author">
-                    <div class="part-img">
-                      <img src="/assets/img/testimonial/02.jpg" alt="">
-                    </div>
-                    <div class="text">
-                      <h5>Jason Statham</h5>
-                      <h6>Web Desinger</h6>
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="testimonial-item">
-                  <div class="icon">
-                    <i class="fas fa-quote-left"></i>
-                  </div>
-                  <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-  
-                  <div class="testimonial-author">
-                    <div class="part-img">
-                      <img src="/assets/img/testimonial/03.jpg" alt="">
-                    </div>
-                    <div class="text">
-                      <h5>Jason Statham</h5>
-                      <h6>Web Desinger</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-          </div>
-        </div>
-      </section>
-      <!-- End testimonial
-      ================================================== -->
-  
-  
-  
       <!-- Blog
       ================================================== -->
-      <section id="blog" class="blog section-padding" data-scroll-index='6'>
+      <section id="blog" class="blog section-padding" data-scroll-index='5'>
         <div class="container">
           <div class="row">
-  
             <div class="section-title text-center">
               <p>See Latest News </p><br>
               <h3>My Blog<cite> .</cite></h3>
             </div>
-  
-            <div class="col-lg-4 sm-mb-30">
-              <div class="blog-item">
-                <div class="part-img">
-                  <img src="/assets/img/blog/1.jpg" alt="">
-                  <div class="post-info-category">
-                    <a href="#">Creative</a>
-                  </div>
-                </div>
-                <div class="content">
-                  <div class="title">
-                    <h4 class="mb-5"><a href="#">Mobilies UX Treend</a></h4>
-                    <div class="meta">
-                    <ul>
-                      <li>04 April 2018</li>
-                    </ul>
-                  </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque.</p>
-                  <div class="author">
-                    <div class="part-img">
-                      <img src="/assets/img/testimonial/02.jpg" alt="">
-                    </div>
-                    <div class="text">
-                      <h5><a href="#">BY John Smith</a></h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-4 sm-mb-30">
-              <div class="blog-item">
-                <div class="part-img">
-                  <img src="/assets/img/blog/2.jpg" alt="">
-                  <div class="post-info-category">
-                    <a href="#">Illustrator</a>
-                  </div>
-                </div>
-                <div class="content">
-                  <div class="title">
-                    <h4 class="mb-5"><a href="#">Relorem Plan 2018</a></h4>
-                    <div class="meta ">
-                    <ul>
-                      <li>04 April 2018</li>
-                    </ul>
-                  </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque.</p>
-                  <div class="author">
-                    <div class="part-img">
-                      <img src="/assets/img/testimonial/02.jpg" alt="">
-                    </div>
-                    <div class="text">
-                      <h5><a href="#">BY John Smith</a></h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="col-lg-4">
-              <div class="blog-item">
-                <div class="part-img">
-                  <img src="/assets/img/blog/3.jpg" alt="">
-                  <div class="post-info-category">
-                    <a href="#">Branding</a>
-                  </div>
-                </div>
-                <div class="content">
-                  <div class="title">
-                    <h4 class="mb-5"><a href="#">Think Inside BOX</a></h4>
-                    <div class="meta">
-                    <ul>
-                      <li>04 April 2018</li>
-                    </ul>
-                  </div>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque.</p>
-                  <div class="author">
-                    <div class="part-img">
-                      <img src="/assets/img/testimonial/03.jpg" alt="">
-                    </div>
-                    <div class="text">
-                      <h5><a href="#">BY John Smith</a></h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
           </div>
         </div>
       </section>
@@ -532,7 +194,7 @@
   
       <!-- contact
       ================================================== -->
-      <section id="contact" class="contact section-padding  cover-bg" data-image-src="/assets/img/bg-1.jpg" data-overlay='7' data-scroll-index='7'>
+      <section id="contact" class="contact section-padding  cover-bg" data-image-src="/assets/img/contact.jpg" data-overlay='6' data-scroll-index='6'>
         <div class="container">
           <div class="row">
   
@@ -544,23 +206,13 @@
             <div class="col-md-12">
               <div class="part-info">
                 <div class="row">
-                  <div class="col-md-4 xs-mb-30">
-                    <div class="info-block text-center">
-                      <div class="icon">
-                        <i class="jam jam-directions"></i>
-                      </div>
-                      <h5>My Location:</h5>
-                      <p>3481 Melrose Place, Beverly Hills CA</p>
-                    </div>
-                  </div>
-  
-                  <div class="col-md-4 xs-mb-30">
+                  <div class="col-md-4 xs-mb-30 offset-md-2">
                     <div class="info-block text-center">
                       <div class="icon">
                         <i class="jam jam-phone"></i>
                       </div>
                       <h5>Phone Number:</h5>
-                      <p>(+1) 517 397 7100</p>
+                      <p id="phoneNumber"></p>
                     </div>
                   </div>
   
@@ -570,7 +222,7 @@
                         <i class="jam jam-envelope"></i>
                       </div>
                       <h5>Email Address:</h5>
-                      <p><a href="#">info@demo.com</a></p>
+                      <p><a href="mailto:bagas@adjipratama.web.id">bagas@adjipratama.web.id</a></p>
                     </div>
                   </div>
                 </div>
@@ -579,7 +231,8 @@
   
             <div class="col-md-12">
               <div class="contact-form">
-                <form class="form" id="contact-form" action="http://theme.dsngrid.com/ner/contact.php" data-toggle="validator">
+                <form class="form" id="contact-form" data-toggle="validator">
+                  <input type="hidden" id="g-recaptcha-response">
                 <div class="messages"></div>
                   <div class="controls">
                     <div class="row">
@@ -609,7 +262,7 @@
                       </div>
   
                       <div class="col-md-12">
-                        <button class="btn"><span>Send Message</span></button>
+                        <button class="btn" type="submit"><span>Send Message</span></button>
                       </div>
   
                     </div>
