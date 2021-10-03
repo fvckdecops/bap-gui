@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const BASE_DIR   = path.dirname(require.main.filename);
 const appRouter  = require(BASE_DIR + '/routes');
 const app        = express();
+const cors      = require('cors');
 require('dotenv').config()
 
 app.set('views', BASE_DIR + '/views');
@@ -18,6 +19,9 @@ app.use(session({
     saveUninitialized: true,
     resave: false
 }));
+
+app.use(cors());
+app.disable('x-powered-by');
 
 app.use(bodyParser.json({
     extended: true,

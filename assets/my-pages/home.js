@@ -1,7 +1,7 @@
 $(function() {
     getListUsers();
     getPortfolio();
-    getNews();
+    // getNews();
     
     $('#contact-form').validator();
 
