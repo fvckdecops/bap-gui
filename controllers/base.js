@@ -72,7 +72,7 @@ class BaseCtrl {
             }
 
             const msg = {
-                to: 'bagas@adjipratama.web.id', // Change to your recipient
+                to: process.env.MY_MAIL, // Change to your recipient
                 from: req.body.fromMail, // Change to your verified sender
                 fromname: req.body.name,
                 subject: req.body.subject,
