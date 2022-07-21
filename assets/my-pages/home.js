@@ -78,7 +78,7 @@ function getListUsers() {
 }
 
 function getPortfolio() {
-    var params = {"limit": 50};
+    var params = {"typeReq": "get", "limit": 50};
     var destRoute = "getPortfolios";
 
     ajax('/http?path=portfolio&dest='+ destRoute, params, function(res) {
